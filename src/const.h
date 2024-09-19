@@ -344,7 +344,7 @@ enum MessageClasses : uint8_t {
 
 	// player:sendTextMessage(...)
 	MESSAGE_BEYOND_LAST = 44, // White, over player + console
-	MESSAGE_TOURNAMENT_INFO = 45, // Window "Tournament" + "Ok" button
+	// MESSAGE_TOURNAMENT_INFO = 45, // Window "Tournament" + "Ok" button
 
 	// 46: undiscovered
 

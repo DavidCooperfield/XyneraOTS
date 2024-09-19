@@ -29,7 +29,7 @@ class Spells final : public BaseEvents
 		Spells& operator=(const Spells&) = delete;
 
 		Spell* getSpellByName(const std::string& name);
-		RuneSpell* getRuneSpell(uint32_t id);
+		RuneSpell* getRuneSpell(uint16_t id);
 		RuneSpell* getRuneSpellByName(const std::string& name);
 
 		InstantSpell* getInstantSpell(const std::string& words);
@@ -120,10 +120,10 @@ class Spell : public BaseSpell
 		void setName(std::string n) {
 			name = n;
 		}
-		uint8_t getId() const {
+		uint16_t getId() const {
 			return spellId;
 		}
-		void setId(uint8_t id) {
+		void setId(uint16_t id) {
 			spellId = id;
 		}
 
@@ -296,7 +296,7 @@ class Spell : public BaseSpell
 		uint32_t magLevel = 0;
 		int32_t range = -1;
 
-		uint8_t spellId = 0;
+		uint16_t spellId = 0;
 
 		bool selfTarget = false;
 		bool needTarget = false;
