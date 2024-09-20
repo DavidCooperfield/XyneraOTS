@@ -1264,8 +1264,8 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(COMBAT_ICEDAMAGE)
 	registerEnum(COMBAT_HOLYDAMAGE)
 	registerEnum(COMBAT_DEATHDAMAGE)
-	registerEnum(L, COMBAT_AGONYDAMAGE);
-	registerEnum(L, COMBAT_NEUTRALDAMAGE);
+	registerEnum(COMBAT_AGONYDAMAGE);
+	registerEnum(COMBAT_NEUTRALDAMAGE);
 
 	registerEnum(COMBAT_PARAM_TYPE)
 	registerEnum(COMBAT_PARAM_EFFECT)

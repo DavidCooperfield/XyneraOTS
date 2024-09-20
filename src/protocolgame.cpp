@@ -3731,7 +3731,7 @@ void ProtocolGame::sendFightModes()
 void ProtocolGame::sendAllowBugReport() {
 	NetworkMessage msg;
 	msg.addByte(0x1A);
-	if (player->getAccountType() >= account::ACCOUNT_TYPE_NORMAL) {
+	if (player->getAccountType() >= ACCOUNT_TYPE_NORMAL) {
 		msg.addByte(0x01);
 	} else {
 		msg.addByte(0x00);

@@ -78,9 +78,9 @@ maxMarketFee = 100000
 
 -- MySQL
 mysqlHost = "127.0.0.1"
-mysqlUser = "forgottenserver"
+mysqlUser = "root"
 mysqlPass = ""
-mysqlDatabase = "forgottenserver"
+mysqlDatabase = "xynera"
 mysqlPort = 3306
 mysqlSock = ""
 
