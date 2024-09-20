@@ -485,7 +485,7 @@ class Game
 
 		bool combatBlockHit(CombatDamage& damage, Creature* attacker, Creature* target, bool checkDefense, bool checkArmor, bool field, bool ignoreResistances = false);
 
-		void combatGetTypeInfo(CombatType_t combatType, Creature* target, TextColor_t& color, uint8_t& effect);
+		void combatGetTypeInfo(CombatType_t combatType, Creature* target, TextColor_t& color, uint16_t& effect);
 
 		bool combatChangeHealth(Creature* attacker, Creature* target, CombatDamage& damage);
 		bool combatChangeMana(Creature* attacker, Creature* target, CombatDamage& damage);
@@ -493,10 +493,10 @@ class Game
 		//animation help functions
 		void addCreatureHealth(const Creature* target);
 		static void addCreatureHealth(const SpectatorVec& spectators, const Creature* target);
-		void addMagicEffect(const Position& pos, uint8_t effect);
-		static void addMagicEffect(const SpectatorVec& spectators, const Position& pos, uint8_t effect);
-		void addDistanceEffect(const Position& fromPos, const Position& toPos, uint8_t effect);
-		static void addDistanceEffect(const SpectatorVec& spectators, const Position& fromPos, const Position& toPos, uint8_t effect);
+		void addMagicEffect(const Position& pos, uint16_t effect);
+		static void addMagicEffect(const SpectatorVec& spectators, const Position& pos, uint16_t effect);
+		void addDistanceEffect(const Position& fromPos, const Position& toPos, uint16_t effect);
+		static void addDistanceEffect(const SpectatorVec& spectators, const Position& fromPos, const Position& toPos, uint16_t effect);
 
 		void setAccountStorageValue(const uint32_t accountId, const uint32_t key, const int32_t value);
 		int32_t getAccountStorageValue(const uint32_t accountId, const uint32_t key) const;

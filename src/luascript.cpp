@@ -1264,6 +1264,8 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(COMBAT_ICEDAMAGE)
 	registerEnum(COMBAT_HOLYDAMAGE)
 	registerEnum(COMBAT_DEATHDAMAGE)
+	registerEnum(L, COMBAT_AGONYDAMAGE);
+	registerEnum(L, COMBAT_NEUTRALDAMAGE);
 
 	registerEnum(COMBAT_PARAM_TYPE)
 	registerEnum(COMBAT_PARAM_EFFECT)
@@ -1547,7 +1549,14 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONST_ME_HORESTIS)
 	registerEnum(CONST_ME_DEVOVORGA)
 	registerEnum(CONST_ME_FERUMBRAS_2)
-	registerEnum(CONST_ME_FOAM)
+	registerEnum(CONST_ME_WHITE_SMOKE);
+	registerEnum(CONST_ME_WHITE_SMOKES);
+	registerEnum(CONST_ME_WATER_DROP);
+	registerEnum(CONST_ME_AVATAR_APPEAR);
+	registerEnum(CONST_ME_DIVINE_GRENADE);
+	registerEnum(CONST_ME_DIVINE_EMPOWERMENT);
+	registerEnum(CONST_ME_WATER_FLOATING_THRASH);
+	registerEnum(CONST_ME_AGONY);
 
 	registerEnum(CONST_ANI_NONE)
 	registerEnum(CONST_ANI_SPEAR)
@@ -2057,6 +2066,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(TEXTCOLOR_BLUE)
 	registerEnum(TEXTCOLOR_LIGHTGREEN)
 	registerEnum(TEXTCOLOR_LIGHTBLUE)
+	registerEnum(TEXTCOLOR_DARKBROWN);
 	registerEnum(TEXTCOLOR_MAYABLUE)
 	registerEnum(TEXTCOLOR_DARKRED)
 	registerEnum(TEXTCOLOR_LIGHTGREY)

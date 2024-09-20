@@ -652,7 +652,14 @@ MagicEffectNames magicEffectNames = {
 	{"horestis",		CONST_ME_HORESTIS},
 	{"devovorga",		CONST_ME_DEVOVORGA},
 	{"ferumbras2",		CONST_ME_FERUMBRAS_2},
-	{"foam", CONST_ME_FOAM},
+	{"whitesmoke", CONST_ME_WHITE_SMOKE},
+	{"whitesmokes", CONST_ME_WHITE_SMOKES},
+	{"waterdrop", CONST_ME_WATER_DROP},
+	{"avatarappear", CONST_ME_AVATAR_APPEAR},
+	{"divinegrenade", CONST_ME_DIVINE_GRENADE},
+	{"divineempowerment", CONST_ME_DIVINE_EMPOWERMENT},
+	{"waterfloatingthrash", CONST_ME_WATER_FLOATING_THRASH},
+	{"agony", CONST_ME_AGONY},
 };
 
 ShootTypeNames shootTypeNames = {
@@ -725,6 +732,8 @@ CombatTypeNames combatTypeNames = {
 	{COMBAT_ICEDAMAGE, 		"ice"},
 	{COMBAT_HOLYDAMAGE, 		"holy"},
 	{COMBAT_DEATHDAMAGE, 		"death"},
+	{COMBAT_AGONYDAMAGE, 		"agony"},
+	{COMBAT_NEUTRALDAMAGE, 		"neutral"},
 };
 
 AmmoTypeNames ammoTypeNames = {
@@ -1039,6 +1048,10 @@ size_t combatTypeToIndex(CombatType_t combatType)
 			return 10;
 		case COMBAT_DEATHDAMAGE:
 			return 11;
+		case COMBAT_AGONYDAMAGE:
+			return 12;
+		case COMBAT_NEUTRALDAMAGE:
+			return 13;
 		default:
 			return 0;
 	}

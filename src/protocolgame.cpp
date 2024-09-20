@@ -2542,7 +2542,7 @@ void ProtocolGame::sendClientFeatures()
 	msg.add<uint32_t>(0x7FB6D57E);
 
 	// can report bugs?
-	msg.addByte(player->getAccountType() >= ACCOUNT_TYPE_TUTOR ? 0x01 : 0x00);
+	// msg.addByte(player->getAccountType() >= ACCOUNT_TYPE_TUTOR ? 0x01 : 0x00);
 
 	msg.addByte(0x00); // can change pvp framing option
 	msg.addByte(0x00); // expert mode button enabled
@@ -2696,6 +2696,7 @@ void ProtocolGame::sendIcons(uint32_t icons)
 	NetworkMessage msg;
 	msg.addByte(0xA2);
 	msg.add<uint32_t>(icons);
+	msg.addByte(0x00); // 13.20 icon counter
 	writeToOutputBuffer(msg);
 }
 
@@ -3521,20 +3522,20 @@ void ProtocolGame::sendPingBack()
 	writeToOutputBuffer(msg);
 }
 
-void ProtocolGame::sendDistanceShoot(const Position& from, const Position& to, uint8_t type)
+void ProtocolGame::sendDistanceShoot(const Position& from, const Position& to, uint16_t type)
 {
 	NetworkMessage msg;
 	msg.addByte(0x83);
 	msg.addPosition(from);
 	msg.addByte(MAGIC_EFFECTS_CREATE_DISTANCEEFFECT);
-	msg.addByte(type);
+	msg.add<uint16_t>(type);
 	msg.addByte(static_cast<uint8_t>(static_cast<int8_t>(static_cast<int32_t>(to.x) - static_cast<int32_t>(from.x))));
 	msg.addByte(static_cast<uint8_t>(static_cast<int8_t>(static_cast<int32_t>(to.y) - static_cast<int32_t>(from.y))));
 	msg.addByte(MAGIC_EFFECTS_END_LOOP);
 	writeToOutputBuffer(msg);
 }
 
-void ProtocolGame::sendMagicEffect(const Position& pos, uint8_t type)
+void ProtocolGame::sendMagicEffect(const Position& pos, uint16_t type)
 {
 	if (!canSee(pos)) {
 		return;
@@ -3544,7 +3545,7 @@ void ProtocolGame::sendMagicEffect(const Position& pos, uint8_t type)
 	msg.addByte(0x83);
 	msg.addPosition(pos);
 	msg.addByte(MAGIC_EFFECTS_CREATE_EFFECT);
-	msg.addByte(type);
+	msg.add<uint16_t>(type);
 	msg.addByte(MAGIC_EFFECTS_END_LOOP);
 	writeToOutputBuffer(msg);
 }
@@ -3724,6 +3725,17 @@ void ProtocolGame::sendFightModes()
 	msg.addByte(player->chaseMode);
 	msg.addByte(player->secureMode);
 	msg.addByte(PVP_MODE_DOVE);
+	writeToOutputBuffer(msg);
+}
+
+void ProtocolGame::sendAllowBugReport() {
+	NetworkMessage msg;
+	msg.addByte(0x1A);
+	if (player->getAccountType() >= account::ACCOUNT_TYPE_NORMAL) {
+		msg.addByte(0x01);
+	} else {
+		msg.addByte(0x00);
+	}
 	writeToOutputBuffer(msg);
 }
 

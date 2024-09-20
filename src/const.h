@@ -16,7 +16,7 @@ enum MagicEffectsType_t : uint8_t {
 	MAGIC_EFFECTS_CREATE_DISTANCEEFFECT_REVERSED = 5, // needs uint8_t and deltaX(int8_t), deltaY(int8_t) after type
 };
 
-enum MagicEffectClasses : uint8_t {
+enum MagicEffectClasses : uint16_t {
 	CONST_ME_NONE,
 
 	CONST_ME_DRAWBLOOD = 1,
@@ -169,7 +169,17 @@ enum MagicEffectClasses : uint8_t {
 	CONST_ME_HORESTIS = 238,
 	CONST_ME_DEVOVORGA = 239,
 	CONST_ME_FERUMBRAS_2 = 240,
-	CONST_ME_FOAM = 241,
+	CONST_ME_WHITE_SMOKE = 241,
+	CONST_ME_WHITE_SMOKES = 242,
+	CONST_ME_WATER_DROP = 243,
+	CONST_ME_AVATAR_APPEAR = 244,
+	CONST_ME_DIVINE_GRENADE = 245, // Permanent
+	CONST_ME_DIVINE_EMPOWERMENT = 246, // Permanent
+	CONST_ME_WATER_FLOATING_THRASH = 247,
+
+	CONST_ME_AGONY = 249,
+
+	CONST_ME_LAST = CONST_ME_AGONY
 };
 
 enum ShootType_t : uint8_t {
@@ -472,6 +482,7 @@ enum TextColor_t : uint8_t {
 	TEXTCOLOR_BLUE = 5,
 	TEXTCOLOR_LIGHTGREEN = 30,
 	TEXTCOLOR_LIGHTBLUE = 35,
+	TEXTCOLOR_DARKBROWN = 78,
 	TEXTCOLOR_MAYABLUE = 95,
 	TEXTCOLOR_DARKRED = 108,
 	TEXTCOLOR_LIGHTGREY = 129,

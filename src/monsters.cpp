@@ -1075,6 +1075,8 @@ MonsterType* Monsters::loadMonster(const std::string& file, const std::string& m
 					mType->info.damageImmunities |= COMBAT_LIFEDRAIN;
 				} else if (tmpStrValue == "manadrain") {
 					mType->info.damageImmunities |= COMBAT_MANADRAIN;
+				} else if (immunity == "agony") {
+					mType->info.damageImmunities |= COMBAT_AGONYDAMAGE;
 				} else if (tmpStrValue == "paralyze") {
 					mType->info.conditionImmunities |= CONDITION_PARALYZE;
 				} else if (tmpStrValue == "outfit") {
